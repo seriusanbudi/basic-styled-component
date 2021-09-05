@@ -6,6 +6,11 @@ const Button = styled("button")`
   background: ${({ color }) => (color ? color : "#fff")};
   border: ${({ noBorder }) => (noBorder ? "none" : "solid 1px #eaeaea")};
   cursor: pointer;
+  transition: 0.2s;
+
+  :hover {
+    opacity: 0.4;
+  }
 `;
 
 export default Button;

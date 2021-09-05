@@ -1,7 +1,32 @@
 import { useState } from "react";
+import styled from "styled-components";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Tab from "../components/Tab";
+
+const ResponsiveContainer = styled("div")`
+  height: 300px;
+  width: 100%;
+  background: red;
+  :hover {
+    opacity: 0.5;
+  }
+
+  @media only screen and (max-width: 600px) {
+    background: yellow;
+  }
+`;
+
+const Menu = styled("div")`
+  font-weight: bold;
+`;
+
+const ArrowWrapper = styled("div")`
+  &:hover ${Menu} {
+    transform: rotate(90deg);
+    background: red;
+  }
+`;
 
 const content = [
   `1. "With Awesomic, we’ve developed neat easy-to-modify design. Such good work helped us raise $500K+ from investors and get hundreds of new users. Besides, the team was happy to help with many things outside requirements and ready to fix issues immediately."`,
@@ -57,7 +82,7 @@ export default function Home() {
         <Button>Button 3</Button>
       </div> */}
 
-      <div style={{ display: "flex" }}>
+      {/* <div style={{ display: "flex" }}>
         <Tab
           active={
             currentTab === "tab-1" ||
@@ -107,7 +132,9 @@ export default function Home() {
             <Button onClick={() => console.log("submit form")}>Submit</Button>
           </div>
         </div>
-      )}
+      )} */}
+
+      {/* <ResponsiveContainer /> */}
     </div>
   );
 }
